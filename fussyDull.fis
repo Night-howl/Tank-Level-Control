@@ -1,0 +1,32 @@
+[System]
+Name='fussyDull'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=2
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Error'
+Range=[-2 2]
+NumMFs=3
+MF1='negative':'trimf',[-3.66666666666667 -2 -1.71087216248507]
+MF2='mid':'trimf',[-0.195937873357228 0.0047789725209082 0.324970131421744]
+MF3='positive':'trimf',[-0.320191158900836 2 3.66666666666667]
+
+[Output1]
+Name='Voltage'
+Range=[0 1]
+NumMFs=3
+MF1='Low':'trimf',[-0.416666666666667 0 0.10573476702509]
+MF2='Med':'trimf',[0.458183990442055 0.5 0.54778972520908]
+MF3='High':'trapmf',[0.6081 0.9565 1.042 1.375]
+
+[Rules]
+1, 1 (1) : 1
+3, 3 (1) : 1
